@@ -33,11 +33,20 @@ const Navbar = () => {
         >
           Expense Tracker
         </Typography>
-        <Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           {isAuthenticated ? (
-            <Button color="inherit" onClick={handleLogout}>
-              Logout
-            </Button>
+            <>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to="/categories"
+              >
+                Categories
+              </Button>
+              <Button color="inherit" onClick={handleLogout}>
+                Logout
+              </Button>
+            </>
           ) : (
             <>
               <Button
